@@ -10,14 +10,6 @@
   --color-muted: #9aa4b2;
 }
 
-/* Modo claro (opcional) */
-.light-mode {
-  --color-bg: #f4f6fb;
-  --color-section: #ffffff;
-  --color-text: #1a1a1a;
-  --color-muted: #555;
-}
-
 /* =======================
    RESET
 ======================= */
@@ -44,31 +36,15 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 20%, rgba(0,170,255,0.12), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(0,85,255,0.12), transparent 40%);
-  animation: fondoAnimado 10s ease-in-out infinite alternate;
+    radial-gradient(circle at 20% 20%, rgba(0,170,255,.12), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0,85,255,.12), transparent 40%);
+  animation: fondoAnimado 12s ease-in-out infinite alternate;
   z-index: -2;
 }
 
 @keyframes fondoAnimado {
   from { transform: scale(1); }
   to { transform: scale(1.1); }
-}
-
-/* Animación gamer */
-.energy {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(120deg, transparent 45%, rgba(0,170,255,0.05), transparent 55%);
-  animation: energyMove 6s linear infinite;
-  z-index: -1;
-}
-
-@keyframes energyMove {
-  from { background-position: 0 0; }
-  to { background-position: 100% 100%; }
 }
 
 /* =======================
@@ -90,13 +66,10 @@ main {
 
 .logo {
   font-size: 2.4rem;
-  margin: 0;
 }
 
 .slogan {
-  font-size: 1.1rem;
-  font-style: italic;
-  opacity: 0.9;
+  opacity: .9;
 }
 
 /* =======================
@@ -105,25 +78,17 @@ main {
 .live-button {
   display: inline-block;
   margin: 25px auto;
-  padding: 16px 32px;
-  font-size: 1.2rem;
+  padding: 16px 34px;
+  border-radius: 50px;
   font-weight: bold;
   color: white;
-  border-radius: 50px;
   text-decoration: none;
-  transition: transform 0.3s;
 }
 
-.live-button.live {
-  background: linear-gradient(90deg, #ff004c, #ff006a);
-  box-shadow: 0 0 25px rgba(255, 0, 76, 0.7);
+.live {
+  background: linear-gradient(90deg,#ff004c,#ff006a);
+  box-shadow: 0 0 25px rgba(255,0,76,.7);
   animation: livePulse 1.5s infinite;
-}
-
-.live-button.offline {
-  background: #555;
-  box-shadow: none;
-  cursor: default;
 }
 
 @keyframes livePulse {
@@ -132,156 +97,253 @@ main {
   100% { box-shadow: 0 0 10px rgba(255,0,76,.6); }
 }
 
-.live-button:hover {
-  transform: scale(1.05);
-}
-
-/* =======================
-   STATS
-======================= */
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  margin-top: 20px;
-}
-
-.stat span {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;
-}
-
-.stat p {
-  margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.85;
-}
-
 /* =======================
    BANNER
 ======================= */
 .banner img {
   width: 100%;
-  max-width: 350px;
-  border-radius: 20px;
+  max-width: 340px;
   margin: 30px auto;
   display: block;
-  box-shadow: 0 10px 30px rgba(0,170,255,.25);
-  animation: fadeIn 1s ease;
-}
-
-/* =======================
-   OFFLINE SCREEN
-======================= */
-.offline-screen {
-  background: var(--color-section);
-  padding: 40px 20px;
   border-radius: 20px;
-  margin: 30px auto;
-  max-width: 600px;
-  animation: fadeIn 1.2s ease;
-}
-
-.offline-screen h2 {
-  color: var(--color-accent);
-}
-
-.offline-msg {
-  font-style: italic;
-  color: var(--color-muted);
+  box-shadow: 0 10px 30px rgba(0,170,255,.25);
 }
 
 /* =======================
-   SOBRE MÍ
-======================= */
-.about {
-  padding: 30px 20px;
-  background-color: var(--color-section);
-  border-top: 2px solid var(--color-accent);
-  border-bottom: 2px solid var(--color-accent);
-}
-
-.about h2 {
-  color: var(--color-accent);
-}
-
-.about p {
-  max-width: 600px;
-  margin: auto;
-}
-
-/* =======================
-   REDES
+   REDES PROFESIONAL
 ======================= */
 .social {
-  padding: 30px 20px;
+  padding: 45px 20px;
 }
 
 .social h2 {
   color: var(--color-accent);
+  margin-bottom: 30px;
 }
 
+/* GRID */
 .social-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  max-width: 520px;
+  margin: auto;
   padding: 0;
   list-style: none;
 }
 
-.social-links a {
-  color: white;
-  text-decoration: none;
-  background: var(--color-primary);
-  padding: 12px;
-  border-radius: 12px;
+/* BOTÓN BASE */
+.social-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 15px;
+  border-radius: 22px;
   font-weight: bold;
-  transition: transform .3s, background .3s, box-shadow .3s;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  animation: fadeUp .8s ease both;
+  background-clip: padding-box;
 }
 
-.social-links a:hover {
-  background: var(--color-accent);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,170,255,.4);
+/* ICONO */
+.social-btn svg {
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
 }
+
+/* CONTADOR */
+.social-count {
+  font-size: .75rem;
+  opacity: .85;
+}
+
+/* ENTRADA */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* GLOW CONTINUO */
+.social-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.4), transparent);
+  animation: glowMove 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes glowMove {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+/* HOVER */
+.social-btn:hover {
+  transform: translateY(-6px) scale(1.04);
+}
+
+/* COLORES + ANIMACIONES */
+.twitch { background:#9146ff; animation-delay:.05s; }
+.instagram { background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af); animation-delay:.1s; }
+.tiktok { background:#000; animation-delay:.15s; }
+.x { background:#000; animation-delay:.2s; }
+.youtube { background:#ff0000; animation-delay:.25s; }
+.discord { background:#5865f2; animation-delay:.3s; }
 
 /* =======================
    FOOTER
 ======================= */
 footer {
-  background-color: var(--color-section);
+  background: var(--color-section);
   color: var(--color-muted);
   padding: 15px;
-  font-size: 0.9rem;
   border-top: 1px solid var(--color-accent);
-}
-
-/* =======================
-   ANIMACIONES
-======================= */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* =======================
    RESPONSIVE
 ======================= */
-@media (max-width: 600px) {
-  .stats {
-    flex-direction: column;
-    gap: 15px;
+@media (max-width:600px){
+  .social-links{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =======================
+   CARDS PROFESIONALES
+======================= */
+.card {
+  position: relative;
+  background: rgba(18, 26, 51, 0.92);
+  border-radius: 24px;
+  padding: 40px 30px 40px 70px;
+  margin: 50px auto;
+  max-width: 720px;
+  box-shadow:
+    0 25px 50px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(255,255,255,.05);
+
+  /* animación solo al entrar */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+
+/* visible cuando entra en pantalla */
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =======================
+   BARRA LATERAL
+======================= */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 35px;
+  bottom: 35px;
+  width: 4px;
+  border-radius: 6px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary),
+    var(--color-accent)
+  );
+  box-shadow: 0 0 18px rgba(0,170,255,.7);
+}
+
+/* =======================
+   TITULO CON ICONO
+======================= */
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 1.8rem;
+  color: var(--color-accent);
+}
+
+.card-title .icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-accent)
+  );
+  box-shadow: 0 0 18px rgba(0,170,255,.6);
+  flex-shrink: 0;
+}
+
+.card-title svg {
+  width: 22px;
+  height: 22px;
+  fill: white;
+}
+
+/* TEXTO */
+.card p {
+  color: var(--color-text);
+  opacity: .9;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0 0 10px;
+}
+
+/* HOVER SUAVE */
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* =======================
+   RESPONSIVE CARDS
+======================= */
+@media (max-width:600px){
+  .card{
+    padding: 30px 22px 30px 55px;
   }
 
-  .logo {
-    font-size: 2rem;
+  .card::before{
+    left: 20px;
   }
+}
+
+/* =======================
+   BOTÓN MÚSICA AMBIENTAL
+======================= */
+#music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg,var(--color-primary),var(--color-accent));
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,170,255,.5);
+  z-index: 999;
+  transition: transform .3s, box-shadow .3s;
+}
+
+#music-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(0,170,255,.8);
 }

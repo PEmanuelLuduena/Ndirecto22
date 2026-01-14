@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Ndirecto21, streamer argentino de Mobile Legends. Comunidad NexoVT.">
+  <meta name="author" content="Pablo - Ndirecto21">
+
+  <title>Ndirecto21 | Streamer de Mobile Legends</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="cici-icon.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- EFECTO GAMER -->
+  <div class="energy"></div>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <h1 class="logo">Ndirecto21</h1>
+    <p class="slogan">Rumbo al Top de Mobile Legends</p>
+
+    <!-- BOTÓN EN VIVO -->
+    <a
+      href="https://www.twitch.tv/ndirecto22"
+      class="live-button live"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🔴 EN VIVO AHORA
+    </a>
+
+    <!-- CONTADOR -->
+    <section class="stats">
+      <div class="stat">
+        <span id="followers">3</span>
+        <p>Seguidores</p>
+      </div>
+      <div class="stat">
+        <span>Mobile Legends</span>
+        <p>Juego principal</p>
+      </div>
+    </section>
+  </header>
+
+  <main>
+
+    <!-- BANNER -->
+    <section class="banner">
+      <figure>
+        <img src="ndirecto22.png" alt="Cici, personaje del canal Ndirecto21">
+        <figcaption>Personaje principal del canal</figcaption>
+      </figure>
+    </section>
+
+    <!-- PANTALLA OFFLINE -->
+    <section class="offline-screen">
+      <h2>Ahora no estoy en directo</h2>
+      <p>
+        Transmito de martes a sábado<br>
+        19:00 a 22:00 (hora Argentina)
+      </p>
+      <p class="offline-msg">
+        Unite a Discord para saber cuando prendo 🔔
+      </p>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="about">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy Pablo, streamer argentino enfocado en Mobile Legends.
+        Mi meta es llegar al top junto a mi comunidad
+        <strong>NexoVT</strong>.
+      </p>
+      <p>
+        Constancia, buena onda y pasión por los videojuegos.
+      </p>
+    </section>
+
+    <!-- REDES -->
+    <nav class="social">
+      <h2>Mis redes</h2>
+      <ul class="social-links">
+        <li><a href="https://www.twitch.tv/ndirecto22" target="_blank">🎮 Twitch</a></li>
+        <li><a href="https://www.instagram.com/ndirecto21" target="_blank">📸 Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@ndirecto2" target="_blank">🎬 TikTok</a></li>
+        <li><a href="https://x.com/Ndirecto21" target="_blank">🐦 X</a></li>
+        <li><a href="https://youtube.com/@ndirecto22?si=AZPQmWMvYpHDTfaj" target="_blank">▶️ YouTube</a></li>
+        <li><a href="https://discord.gg/fGCykQMm" target="_blank">💬 Discord</a></li>
+      </ul>
+    </nav>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Ndirecto21 · Todos los derechos reservados</p>
+  </footer>
+
+  <!-- CONTADOR ANIMADO -->
+  <script>
+    let count = 0;
+    const target = 3; // CAMBIÁ ESTE NÚMERO CUANDO QUIERAS
+    const followers = document.getElementById("followers");
+
+    const interval = setInterval(() => {
+      count += 10;
+      followers.textContent = count;
+      if (count >= target) {
+        followers.textContent = target;
+        clearInterval(interval);
+      }
+    }, 20);
+  </script>
+
+</body>
+</html>

@@ -14,11 +14,7 @@
 </head>
 
 <body>
-<body>
 
-<audio id="bg-music" loop>
-  <source src="chill.mp3.mp3" type="audio/mpeg">
-</audio>
   <!-- EFECTO GAMER -->
   <div class="energy"></div>
 
@@ -203,34 +199,10 @@
     cards.forEach(card => observer.observe(card));
   </script>
   
-<button id="music-btn" aria-label="Música">
-  🔊
-</button>
-<audio id="bg-music" loop>
-  <source src="chill.mp3" type="audio/mpeg">
-</audio>
 
-<button id="music-toggle" class="music-btn">🎵</button>
 
 <!-- TODO tu contenido -->
 
-<script>
-  const music = document.getElementById("bg-music");
-  const btn = document.getElementById("music-btn");
-  let playing = false;
 
-  btn.addEventListener("click", () => {
-    if (!playing) {
-      music.volume = 0.15; // volumen bajo tipo ascensor
-      music.play();
-      btn.textContent = "🔇";
-    } else {
-      music.pause();
-      btn.textContent = "🎵";
-    }
-    playing = !playing;
-  });
-</script>
-</body>
-</body>
+</b>
 </html>

@@ -418,6 +418,25 @@ nav.social h2 {
   background: linear-gradient(to right, transparent, #666, transparent);
 }
 
+/* ===== FONDO ANIMADO AZUL ===== */
+body {
+  background: linear-gradient(
+    -45deg,
+    #050b1e,
+    #0a1a3a,
+    #0f2b5c,
+    #08142e
+  );
+  background-size: 400% 400%;
+  animation: fondoAzul 18s ease infinite;
+}
+
+@keyframes fondoAzul {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* CONTENEDOR DE JUEGOS */
 .stat.games {
   display: flex;
@@ -544,4 +563,69 @@ nav.social h2 {
 .clip-card:hover {
   transform: translateY(-6px) scale(1.04);
   box-shadow: 0 12px 30px rgba(0,170,255,.35);
+}
+
+/* =======================
+   FONDO ANIMADO EXTRA
+======================= */
+
+.bg-animated {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(0,170,255,0.18), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(0,85,255,0.15), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(0,170,255,0.12), transparent 50%);
+  animation: bgFloat 18s ease-in-out infinite alternate;
+}
+
+@keyframes bgFloat {
+  0% {
+    transform: scale(1) translateY(0);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) translateY(-10px);
+  }
+  100% {
+    transform: scale(1.1) translateY(10px);
+    filter: hue-rotate(15deg);
+  }
+}
+
+/* =======================
+   FONDO AZUL ANIMADO
+======================= */
+
+.bg-animated {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0,150,255,0.25), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(0,90,255,0.25), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(0,170,255,0.22), transparent 50%),
+    linear-gradient(180deg, #050b1e, #06142f, #050b1e);
+  animation: blueFlow 20s ease-in-out infinite;
+}
+
+@keyframes blueFlow {
+  0% {
+    background-position: 0% 0%;
+    filter: brightness(1);
+  }
+  50% {
+    background-position: 100% 100%;
+    filter: brightness(1.1);
+  }
+  100% {
+    background-position: 0% 0%;
+    filter: brightness(1);
+  }
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
 }

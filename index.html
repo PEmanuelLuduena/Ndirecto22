@@ -3,213 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ndirecto22 | Streamer</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Ndirecto22, streamer argentino de Mobile Legends. Comunidad NexoVT.">
-  <meta name="author" content="Pablo - Ndirecto22">
-  <meta name="keywords" content="Ndirecto22, streamer argentino, Mobile Legends, Twitch Argentina, gaming">
-  <meta name="robots" content="index, follow">
-
-  <!-- Redes sociales -->
-  <meta property="og:title" content="Ndirecto22 | Streamer de Mobile Legends">
-  <meta property="og:description" content="Streamer argentino de Mobile Legends. Unite a la comunidad NexoVT.">
-  <meta property="og:image" content="ndirecto22.png">
-  <meta property="og:type" content="website">
-
-  <title>Ndirecto22 | Streamer de Mobile Legends</title>
+  <!-- Meta -->
+  <meta name="description" content="Ndirecto22 streamer de Mobile Legends, Minecraft y Counter-Strike 2">
+  <meta name="keywords" content="streamer, twitch, gaming, mobile legends, minecraft, cs2">
+  <meta name="author" content="Ndirecto22">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="ndirecto22-icon.png" type="image/png">
 </head>
 
 <body>
 
-  <!-- EFECTO GAMER -->
-  <div class="energy"></div>
+<header class="main-header">
+  <h1 class="logo">Ndirecto22</h1>
+  <p class="slogan">Streamer • Gaming • Comunidad</p>
 
-  <!-- HEADER -->
-  <header class="main-header">
-    <h1 class="logo">Ndirecto22</h1>
-    <p class="slogan">Rumbo al Top de Mobile Legends</p>
-
-    <a
-      href="https://www.twitch.tv/ndirecto22"
-      class="live-button live"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      🔴 EN VIVO AHORA
-    </a>
-
-    <section class="stats">
-      <div class="stat">
-        <span id="followers">0</span>
-        <p>Seguidores</p>
-      </div>
-
-      <!-- LÍNEA DIVISORIA -->
-<div class="stat games">
-  <div class="game-item ml">
-    <svg viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10"/>
-    </svg>
-    <span>Mobile Legends</span>
+  <!-- Estado -->
+  <div class="channel-status live">
+    🟢 Canal en directo
   </div>
 
-  <div class="game-item minecraft">
-    <svg viewBox="0 0 24 24">
-      <rect x="4" y="4" width="16" height="16"/>
-    </svg>
-    <span>Minecraft</span>
+  <!-- Botón -->
+  <a href="https://www.twitch.tv/ndirecto22"
+     target="_blank"
+     class="live-button">
+     🔴 VER DIRECTO
+  </a>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="stat">
+      <span>0</span>
+      <p>Seguidores</p>
+    </div>
+
+    <div class="stat">
+      <span>100</span>
+      <p>Meta</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+<!-- JUEGOS -->
+<section class="games-section">
+  <h2>🎮 Juegos que streameo</h2>
+
+  <div class="games-grid">
+
+    <a href="juegos/mobile-legends.html" class="game-item ml">
+  <img src="games/mobile-legends.jpg" alt="Mobile Legends"
+  <span>Mobile Legends</span>
+</a>
+    </div>
+
+    <a href="juegos/minecraft.html" class="game-item ml">
+  <img src="games/minecraft.jpg" alt="minecraft">
+  <span>Minecraft</span>
+</a>
+    </div>
+
+   <a href="juegos/cs2.html" class="game-item ml">
+  <img src="games/cs2.jpg" alt="Counter-Strike 2">
+  <span>Counter-Strike 2</span>
+</a>
+    </div>
+
   </div>
 
-  <div class="game-item cs2">
-    <svg viewBox="0 0 24 24">
-      <path d="M4 12h16M12 4v16"/>
-    </svg>
-    <span>Counter-Strike 2</span>
-  </div>
+  <p class="games-note">
+    Próximamente más juegos 👀
+  </p>
+</section>
+</header>
 
-  <p class="stat-label">Juegos principales</p>
-</div>
-    </section>
-  </header>
+<!-- REDES -->
+<hr class="divider">
+<section class="social-section">
+  <h2>Mis redes</h2>
 
-  <main>
-
-    <!-- BANNER -->
-    <section class="banner">
-      <figure>
-        <img src="ndirecto22.png" alt="Personaje del canal Ndirecto22">
-        <figcaption>Personaje principal del canal</figcaption>
-      </figure>
-    </section>
-
-    <!-- CARD OFFLINE -->
-    <section class="card">
-      <h2 class="card-title">
-        <span class="icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 11h-2V7h2v6zm0 4h-2v-2h2v2z"/>
-          </svg>
-        </span>
-        Ahora no estoy en directo
-      </h2>
-
-      <p>
-        Transmito de martes a sábado<br>
-        19:00 a 22:00 (hora Argentina)
-      </p>
-
-      <p class="offline-msg">
-        Unite a Discord para saber cuando prendo 🔔
-      </p>
-    </section>
-
-    <!-- CARD SOBRE MI -->
-    <section class="card">
-      <h2 class="card-title">
-        <span class="icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 12a5 5 0 100-10 5 5 0 000 10zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/>
-          </svg>
-        </span>
-        Sobre mí
-      </h2>
-
-      <p>
-        Soy Pablo, streamer argentino enfocado en Mobile Legends.
-        Mi objetivo es crecer junto a mi comunidad
-        <strong>NexoVT</strong>.
-      </p>
-
-      <p>
-        Constancia, buena onda y pasión por los videojuegos.
-      </p>
-    </section>
-
-    <!-- REDES -->
-    <nav class="social">
-      <h2>Mis redes</h2>
-
-      <ul class="social-links">
-
-        <li>
-          <a href="https://www.twitch.tv/ndirecto22" target="_blank" class="social-btn twitch">
-            Twitch
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.instagram.com/ndirecto22" target="_blank" class="social-btn instagram">
-            Instagram
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.tiktok.com/@offis2026" target="_blank" class="social-btn tiktok">
-            TikTok
-          </a>
-        </li>
-
-        <li>
-          <a href="https://x.com/Ndirecto22" target="_blank" class="social-btn x">
-            X
-          </a>
-        </li>
-
-        <li>
-          <a href="https://youtube.com/@ndirecto22" target="_blank" class="social-btn youtube">
-            YouTube
-          </a>
-        </li>
-
-        <li>
-          <a href="https://discord.gg/fGCykQMm" target="_blank" class="social-btn discord">
-            Discord
-          </a>
-        </li>
-
-      </ul>
-    </nav>
-
-  </main>
-
-  <footer>
-    <p>© 2026 Ndirecto22 · Todos los derechos reservados</p>
-  </footer>
-
-  <!-- CONTADOR -->
-  <script>
-    let count = 0;
-    const target = 0;
-    const followers = document.getElementById("followers");
-
-    const interval = setInterval(() => {
-      count += 10;
-      followers.textContent = count;
-      if (count >= target) {
-        followers.textContent = target;
-        clearInterval(interval);
-      }
-    }, 20);
-  </script>
-
-  <!-- ANIMACION SOLO AL ENTRAR -->
-  <script>
-    const cards = document.querySelectorAll(".card");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
+  <ul class="social-links">
+    <li><a href="https://www.twitch.tv/ndirecto22" target="_blank" class="social-btn twitch">Twitch</a></li>
+    <li><a href="https://www.instagram.com/ndirecto22" target="_blank" class="social-btn instagram">Instagram</a></li>
+    <li><a href="https://www.tiktok.com/@offis2026" target="_blank" class="social-btn tiktok">TikTok</a></li>
+    <li><a href="https://x.com/Ndirecto22" target="_blank" class="social-btn x">X</a></li>
+    <li><a href="https://youtube.com/@ndirecto22" target="_blank" class="social-btn youtube">YouTube</a></li>
+    <li><a href="https://discord.gg/fGCykQMm" target="_blank" class="social-btn discord">Discord</a></li>
+  </ul>
+</section>
 
 </body>
 </html>

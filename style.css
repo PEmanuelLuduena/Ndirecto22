@@ -1,344 +1,547 @@
-/* =======================
-   VARIABLES
-======================= */
-:root {
-  --color-bg: #0b1020;
-  --color-section: #121a33;
-  --color-primary: #0055ff;
-  --color-accent: #00aaff;
-  --color-text: #e6e8ee;
-  --color-muted: #9aa4b2;
-}
-
-/* =======================
-   RESET
-======================= */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-/* =======================
-   BASE
-======================= */
-body {
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  background: var(--color-bg);
-  color: var(--color-text);
+}
+
+body {
+  background: #0f0f14;
+  color: #fff;
   text-align: center;
-  line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* Fondo animado */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(0,170,255,.12), transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(0,85,255,.12), transparent 40%);
-  animation: fondoAnimado 12s ease-in-out infinite alternate;
-  z-index: -2;
-}
-
-@keyframes fondoAnimado {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
-}
-
-/* =======================
-   EFECTO GAMER
-======================= */
-.energy {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    120deg,
-    transparent 45%,
-    rgba(0,170,255,.06),
-    transparent 55%
-  );
-  animation: energyMove 6s linear infinite;
-  z-index: -1;
-}
-
-@keyframes energyMove {
-  from { background-position: 0 0; }
-  to { background-position: 100% 100%; }
-}
-
-/* =======================
-   CONTENEDOR
-======================= */
-main {
-  max-width: 900px;
-  margin: auto;
-  padding-bottom: 40px;
-  min-height: calc(100vh - 320px);
-}
-
-/* =======================
-   HEADER
-======================= */
+/* HEADER */
 .main-header {
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  padding: 35px 15px;
-  color: white;
+  padding: 40px 20px;
 }
 
 .logo {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
+  color: #ff004f;
 }
 
 .slogan {
-  opacity: .9;
+  margin-top: 8px;
+  opacity: 0.8;
 }
 
-/* =======================
-   BOTÓN EN VIVO
-======================= */
+/* Estado */
+.channel-status {
+  margin: 18px auto;
+  padding: 8px 16px;
+  display: inline-block;
+  border-radius: 20px;
+  font-weight: bold;
+  background: #0f5132;
+  color: #2aff9d;
+}
+
+/* Botón */
 .live-button {
   display: inline-block;
-  margin: 25px auto;
-  padding: 16px 34px;
-  border-radius: 50px;
-  font-weight: bold;
-  color: white;
+  margin: 20px 0;
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #ff004f, #ff2e88);
+  color: #fff;
+  border-radius: 30px;
   text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s;
 }
 
-.live {
-  background: linear-gradient(90deg,#ff004c,#ff006a);
-  box-shadow: 0 0 25px rgba(255,0,76,.7);
-  animation: livePulse 1.5s infinite;
+.live-button:hover {
+  transform: scale(1.05);
 }
 
-@keyframes livePulse {
-  0% { box-shadow: 0 0 10px rgba(255,0,76,.6); }
-  50% { box-shadow: 0 0 30px rgba(255,0,76,1); }
-  100% { box-shadow: 0 0 10px rgba(255,0,76,.6); }
-}
-
-/* =======================
-   STATS
-======================= */
+/* Stats */
 .stats {
-  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 40px;
   margin-top: 25px;
 }
 
 .stat span {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.8rem;
+  color: #ff2e88;
 }
 
 .stat p {
-  font-size: .8rem;
-  opacity: .85;
+  font-size: 0.9rem;
+  opacity: 0.8;
 }
 
-/* Línea divisoria */
-.stats::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  height: 45px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--color-accent),
-    transparent
-  );
+/* Línea */
+.divider {
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ff004f, transparent);
+  margin: 40px auto;
 }
 
-/* =======================
-   JUEGOS
-======================= */
-.games {
+/* Juegos */
+.main-games h2 {
+  margin-bottom: 15px;
+}
+
+.games-list {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .game-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: .95rem;
-  font-weight: 600;
-}
-
-.game-item svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-
-/* colores */
-.ml { color: #00aaff; }
-.minecraft { color: #6cc24a; }
-.cs2 { color: #ff9f1c; }
-
-.stat-label {
-  font-size: .7rem;
-  opacity: .7;
-}
-
-/* =======================
-   BANNER
-======================= */
-.banner img {
-  width: 100%;
-  max-width: 340px;
-  margin: 35px auto;
-  display: block;
-  border-radius: 22px;
-  box-shadow: 0 15px 35px rgba(0,170,255,.25);
-}
-
-/* =======================
-   CARDS
-======================= */
-.card {
-  background: var(--color-section);
-  margin: 25px 15px;
-  padding: 25px;
-  border-radius: 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: .6s ease;
-}
-
-.card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.card-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
-  margin-bottom: 12px;
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 14px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.game-item img {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.game-item:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,170,255,.25);
+}
+
+.ml { background: #6f42c1; }
+.minecraft { background: #2ecc71; }
+.cs2 { background: #f39c12; }
+
+/* Redes */
+.social {
+  margin: 50px 0;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.social-btn:hover {
+  transform: scale(1.08);
+}
+
+.twitch { background: #9146ff; }
+.instagram { background: #e1306c; }
+.tiktok { background: #000; }
+.x { background: #1da1f2; }
+.youtube { background: #ff0000; }
+.discord { background: #5865f2; }
+
+/* =======================
+   JUEGOS CON IMÁGENES
+======================= */
+.games-section {
+  margin: 60px auto 40px;
+  padding: 0 20px;
+}
+
+.games-section h2 {
+  margin-bottom: 25px;
   color: var(--color-accent);
 }
 
-.card-title svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: auto;
 }
 
-/* =======================
-   REDES
-======================= */
-.social {
-  padding: 60px 20px 40px;
+.game-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--color-section);
+  box-shadow: 0 15px 35px rgba(0,0,0,.35);
+  cursor: pointer;
+  transform: translateY(0);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.game-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease, filter .5s ease;
+}
+
+/* Overlay info */
+.game-info {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.15)
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+
+.game-info span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+
+/* HOVER ANIMATION */
+.game-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,170,255,.35);
+}
+
+.game-card:hover img {
+  transform: scale(1.12);
+  filter: brightness(1.1);
+}
+
+.game-card:hover .game-info {
+  opacity: 1;
+}
+
+/* Colores por juego */
+.game-card.ml { border-top: 4px solid #00aaff; }
+.game-card.minecraft { border-top: 4px solid #6cc24a; }
+.game-card.cs2 { border-top: 4px solid #ff9f1c; }
+
+/* Nota */
+.games-note {
+  margin-top: 25px;
+  font-size: .85rem;
+  opacity: .7;
+}
+
+/* Separación extra entre redes */
+.social-links {
+  row-gap: 25px; /* separación vertical */
+  column-gap: 25px; /* separación horizontal */
+}
+
+/* Un poco más de aire entre cada botón */
+.social-btn {
+  padding: 20px;
+}
+
+/* Separación del título */
+.social h2 {
+  margin-bottom: 25px;
+}
+
+@media (max-width: 600px) {
+  .social-links {
+    row-gap: 30px;
+  }
+}
+
+/* ===== ARREGLO DEFINITIVO ESPACIADO REDES ===== */
+
+nav.social {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-top: 10px;
 }
 
 .social-links {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 18px;
-  max-width: 520px;
-  margin: auto;
-  list-style: none;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 32px;
+  column-gap: 28px;
+  margin-top: 30px;
+}
+
+.social-links li {
+  margin: 0;
 }
 
 .social-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 18px;
-  border-radius: 20px;
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  transition: .3s;
+  padding: 22px 20px;
 }
 
-.social-btn svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-}
-
-.social-btn:hover {
-  transform: translateY(-5px) scale(1.03);
-}
-
-.twitch { background:#9146ff; }
-.instagram { background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
-.tiktok { background:#000; }
-.x { background:#000; }
-.youtube { background:#ff0000; }
-.discord { background:#5865f2; }
-
-/* =======================
-   FOOTER
-======================= */
-footer {
-  background: var(--color-section);
-  color: var(--color-muted);
-  padding: 15px;
-  font-size: .85rem;
-  border-top: 1px solid var(--color-accent);
-}
-
-/* =======================
-   RESPONSIVE
-======================= */
-@media (max-width:600px){
-  .stats::after {
-    display: none;
+@media (max-width: 600px) {
+  nav.social {
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
 
   .social-links {
     grid-template-columns: 1fr;
+    row-gap: 36px;
   }
 }
 
-.game-item {
-  transition: transform .2s ease, opacity .2s ease;
+/* ===== FIX DEFINITIVO REDES SEPARADAS ===== */
+
+nav.social {
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
-.game-item:hover {
-  transform: translateX(4px);
-  opacity: .85;
+nav.social h2 {
+  margin-bottom: 40px;
 }
 
-.card + .card {
-  border-top: 1px solid rgba(255,255,255,.08);
+/* separación REAL entre botones */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px; /* 👈 ESTA es la clave */
+  margin: 0 auto;
+  padding: 0;
 }
 
-.main-header {
-  animation: headerIn .8s ease;
+/* cada item independiente */
+.social-links li {
+  display: block;
 }
 
-@keyframes headerIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* botón más alto para aire visual */
+.social-btn {
+  padding: 24px;
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
-  main {
-    min-height: auto;
-    padding-bottom: 20px;
+  .social-links {
+    grid-template-columns: 1fr;
+    gap: 45px; /* más separación vertical */
   }
+
+  nav.social {
+    margin: 40px auto;
+  }
+}
+
+/* ===== REDES - FIX DEFINITIVO ===== */
+
+.social-section {
+  margin: 80px 0;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.social-section h2 {
+  margin-bottom: 40px;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* 🔥 separación REAL */
+}
+
+.social-links li {
+  margin: 0;
+}
+
+.social-btn {
+  display: block;
+  padding: 16px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Colores */
+.twitch { background: #9146ff; }
+.instagram { background: #e1306c; }
+.tiktok { background: #000000; }
+.x { background: #111111; }
+.youtube { background: #ff0000; }
+.discord { background: #5865f2; }
+
+
+@media (min-width: 768px) {
+  .social-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-links li {
+    width: 45%;
+  }
+}
+
+.social-btn:hover {
+  box-shadow: 0 0 20px rgba(255,255,255,0.25);
+}
+
+.divider {
+  width: 60%;
+  margin: 80px auto;
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #666, transparent);
+}
+
+/* CONTENEDOR DE JUEGOS */
+.stat.games {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+/* JUEGO COMO <a> */
+.game-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  text-decoration: none;
+  color: #fff;
+
+  padding: 14px 18px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+/* IMAGEN DEL JUEGO */
+.game-item img {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 12px;
+
+  transition: transform .3s ease;
+}
+
+/* TEXTO */
+.game-item span {
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+/* HOVER GENERAL */
+.game-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.5);
+}
+
+/* ANIMACIÓN DE IMAGEN */
+.game-item:hover img {
+  transform: scale(1.12) rotate(-2deg);
+}
+
+/* COLORES POR JUEGO */
+.game-item.ml:hover {
+  background: linear-gradient(135deg, #005eff, #00c6ff);
+}
+
+.game-item.minecraft:hover {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.game-item.cs2:hover {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+/* CLICK */
+.game-item:active {
+  transform: scale(0.96);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .game-item {
+    padding: 14px;
+  }
+
+  .game-item img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* =======================
+   CLIPS POR JUEGO
+======================= */
+
+.clips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.clip-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.04)
+  );
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: .3s ease;
+}
+
+.clip-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.clip-card span {
+  display: block;
+  padding: 14px;
+  font-weight: 600;
+}
+
+.clip-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(0,170,255,.35);
 }
